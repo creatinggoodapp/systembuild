@@ -1,0 +1,54 @@
+[USE]
+- Automates app deployment
+  Example: install new version of sofware on multiple host, todo: list out the IP addresses of nodes in inventory and 
+- Write playbook to install the software, then run the playbook from control machine.
+- Service orchestratrion
+- Cloud provisioning
+
+[ELEMENT]
+- YAML file: readable configuration file -> describe all of systems are interrelated. 
+  key-value format
+  intendentation
+  " - " begin for list of value
+  "|" or ">" for multiple lines
+- Playbooks: control actions on groups (host files: IP, user, connection=ssh ...
+- Inventory: group (host, host)
+- Control machine (server): running python
+- Remote machine
+
+[HOW]
+- Connecting nodes through ssh (default) or Kerberos.
+- Then, pushes small programs: ansible modules
+- Ad-hoc comand
+  run parallel: IE. run 12 forks: $Ansible group_acb -a "/sbin/reboot" -f 12
+  file transfer:                  $Ansible group_abc copy -a "src = ./. dest = /.."
+  manage packages:                $Ansible group_abc -m yum -a "name=.. state= present" (check package)
+  gather facts: (for conditioning) $Ansile all -m setup
+- Playbook:
+--- 
+   name: install and configure DB
+   hosts: testServer
+   become: yes
+
+   vars: ## setting
+      oracle_db_port_value : 1521
+   
+   tasks: ## commands
+   -name: Install the Oracle DB # help text 
+      yum: <code to install the DB>
+    
+   -name: Ensure the installed service is enabled and running
+   service:
+      name: <your service name> # help text
+
+- Roles
+
+
+
+====================================================
+
+
+
+
+
+
