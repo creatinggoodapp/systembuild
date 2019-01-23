@@ -1,0 +1,7 @@
+1. Intro
+$ docker container run hello-world
+==> . donwload 'hello-world' container image
+    . execute
+    . stop container
+    
+2.
