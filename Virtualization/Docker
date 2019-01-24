@@ -1,0 +1,13 @@
+0. BASIC COMMAND: -----------------------------------------
+  list image = docker image list
+  run image = docker container run IMAGE_ID
+  stop image = docker container stop IMAGE_ID
+  
+ 1. INTRO: ------------------------------------------------
+  Build = from dockerfile (script {base, apk, file copy ..})
+  Compose = define and share multi-container definition
+  Machine = launch Docker hosts on multiple platforms
+  
+ 2.COMPOSE: -------------------------------------------------
+  
+ 
