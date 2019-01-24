@@ -3,3 +3,8 @@ Docker hubs -------------------------------
 
 Automated build ----------------------------
   Docker hub  <---> link to Github account (or Bitbucket) 
+  Setup repo link ==> kick off unattended build each time new version image is published. ~~> up-to-date and patched
+
+
+  
+
