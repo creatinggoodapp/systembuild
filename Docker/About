@@ -1,0 +1,38 @@
+0. BASIC COMMAND: -----------------------------------------
+
+  list image = docker image list
+
+  run image = docker container run IMAGE_ID
+
+  stop image = docker container stop IMAGE_ID
+  
+  interac container = $ docker container exec -i -t nginx-test /bin/sh
+
+1. INTRO: ------------------------------------------------
+
+  Build = from dockerfile (script {base, apk, file copy ..})
+  Compose = define and share multi-container definition
+  Machine = launch Docker hosts on multiple platforms
+
+2. BUILD --------------------------------------------------
+
+    "Dockerfile"  --> current dir
+    Copy /Add     --> ref. to current dir
+    docker image build --tag local:fromscratch .
+
+3. MANAGING CONTAINER -------------------------------------
+    basic: 
+      run, stop, rm container
+      
+    interacting
+      attach = connect to the running container process 
+      exec = ### ssh login vao container, spawns second process within the container for interacting
+        $ docker container exec -i -t nginx-test /bin/sh
+        $ docker container exec -i -t nginx-test /bin/bash
+        $ docker container exec nginx-test cat /etc/devian_version
+    
+    log and process
+    resource limits
+    states
+    removing
+    
