@@ -3,11 +3,24 @@
   run image = docker container run IMAGE_ID
   stop image = docker container stop IMAGE_ID
   
- 1. INTRO: ------------------------------------------------
+1. INTRO: ------------------------------------------------
   Build = from dockerfile (script {base, apk, file copy ..})
   Compose = define and share multi-container definition
   Machine = launch Docker hosts on multiple platforms
   
- 2.COMPOSE: -------------------------------------------------
-  
+
+2. BUILD --------------------------------------------------
+    "Dockerfile"  --> current dir
+    Copy /Add     --> ref. to current dir
+
+    docker image build --tag local:fromscratch .
+    
+    // build with option (ENV), have to modify Dockerfile
+    docker build --tag local/apache-php:7 .
+    
+    
+3.COMPOSE: -------------------------------------------------
+ 
+ 
+ 
  
